@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import axios from "axios"
+import axios from './axios.js'
 
 const App = () => {
   const [data, setData] = useState("")
-  const API_URI = import.meta.env.VITE_API_URI
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${API_URI}/`, {
+      const response = await axios.get(`/api/`, {
         headers: {
           'ngrok-skip-browser-warning': 'true'
         }
